@@ -4,13 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="codepage, Miyakori">
-    <meta name="description" content="#include&amp;lt;iostream&amp;gt;
-using namespace std;
-int main()
-&amp;#123;
-    cout&amp;lt;&amp;lt;&amp;quot;hello world&amp;quot;&amp;lt;&amp;lt;endl;
-   ">
+    <meta name="keywords" content="使用github+hexo搭建博客, Miyakori">
+    <meta name="description" content="前言当我在搭建博客时，就想着把如何搭建博客作为搭建完博客后的第一篇博客(混乱)，毕竟在这个过程中踩了好多坑，有些问题明明很简单，却因为不熟悉而在这上面花了大量时间。这篇博客也就当作对这个过程的一个复盘，如果其中的内容对你有帮助的话就再好不过">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +17,7 @@ int main()
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>codepage | Miyakori</title>
+    <title>使用github+hexo搭建博客 | Miyakori</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
     
 
@@ -230,12 +225,12 @@ int main()
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">codepage</h1>
+                    <h1 class="description center-align post-title">使用github+hexo搭建博客</h1>
                 </div>
             </div>
         </div>
@@ -259,14 +254,31 @@ int main()
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/code-news/">
-                                <span class="chip bg-color">code,news</span>
+                            <a href="/tags/github/">
+                                <span class="chip bg-color">github</span>
+                            </a>
+                        
+                            <a href="/tags/hexo/">
+                                <span class="chip bg-color">hexo</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                                <span class="chip bg-color">博客</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                技术
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -299,14 +311,52 @@ int main()
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-using namespace std;
-int main()
-&#123;
-    cout&lt;&lt;&quot;hello world&quot;&lt;&lt;endl;
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当我在搭建博客时，就想着把<strong>如何搭建博客</strong>作为搭建完博客后的第一篇博客(混乱)，毕竟在这个过程中踩了好多坑，有些问题明明很简单，却因为不熟悉而在这上面花了大量时间。这篇博客也就当作对这个过程的一个复盘，如果其中的内容对你有帮助的话就再好不过了。</p>
+<h2 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h2><p>如果是第一次用macOS，需要先安装<code>homebrew</code>，这是一个macOS平台下的软件管理包，类似windows中的<code>pip</code>。在终端中输入如下命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/bin/zsh <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://gitee.com/huwei1024/HomebrewCN/raw/master/Homebrew.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>由于官网直连可能失败，这里是在<code>gitee</code>上下载。如果使用代理的话，要记得额外给终端设置代理端口。</p>
+<p>安装完成后在终端输入<code>brew -v</code>，若显示版本号，则表明安装成功。</p>
+<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token function">node</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装完后输入<code>node -v</code>和<code>npm -v</code>，返回版本号则表明安装成功。</p>
+<p>为提升下载速度，可给npm换源</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> config get registry    <span class="token comment">#查看当前源</span>
+<span class="token function">npm</span> config <span class="token builtin class-name">set</span> registry https://registry.npmmirror.com/    <span class="token comment">#更换镜像源</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-cli <span class="token parameter variable">-g</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>其中<code>-g</code>表示全局安装，若删去则表示仅在当前文件夹安装。安装完后输入<code>hexo -v</code>，返回版本号则表明安装成功。<br>接着新建一个文件夹（如“blog”）用来存放博客相关文件，输入<code>cd blog</code>进入该目录后，输入如下命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo init        <span class="token comment">#初始化文件夹</span>
+<span class="token function">npm</span> <span class="token function">install</span>      <span class="token comment">#安装相应组件</span>
+hexo g           <span class="token comment">#生成静态网页</span>
+hexo s           <span class="token comment">#打开本地服务器</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>全部完成后，打开浏览器，输入<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> , 即可在本地查看当前博客界面。想关闭本地服务器，则在终端按下<code>control+c</code>即可。</p>
+<h2 id="新建github仓库"><a href="#新建github仓库" class="headerlink" title="新建github仓库"></a>新建github仓库</h2><p>经过上边的步骤，博客已经初步搭建好了，但只能在本地浏览。要想他人也能访问，可将其托管在<code>github</code>上。<br>首先进入<a target="_blank" rel="noopener" href="https://github.com/">https://github.com</a> 网页，登陆自己的账号后，点击右上角自己的头像，找到<code>Your repositories</code>，进入后，点击右上角的<code>New</code>新建一个仓库，在<code>Respository name</code>中输入<code>yourname.github.io</code>,这里的<code>yourname</code>是你gitbub账号的名称，即前面<code>Owner</code>中显示的内容。勾选下方<code>Add a README file</code>后，点击最下面的<code>Create repository</code>完成仓库的创建。</p>
+<h2 id="使用git连接Github和本地"><a href="#使用git连接Github和本地" class="headerlink" title="使用git连接Github和本地"></a>使用git连接Github和本地</h2><p>使用如下命令安装<code>git</code></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装完成后，输入如下命令链接你的github账号</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"yourname"</span>     <span class="token comment">#你的github账号名称</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"youremail"</span>   <span class="token comment">#注册github账号的邮箱</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>之后输入如下命令生成ssh密钥</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> <span class="token string">"youremail"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>其中需要输入的时候直接按<code>回车</code>即可。</p>
+<p>之后输入如下命令获取ssh密钥</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> ~/.ssh/id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>打开<a href="github.com">github</a>，点击头像找到<code>Settings</code>,进入<code>SSH and GPG keys</code>，点击<code>New SSH key</code>，名字可随便取，在<code>key</code>中填入上面生成的ssh密钥，点击<code>Add SSH key</code>完成添加。</p>
+<p>输入如下命令测试是否连接成功</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-T</span> git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果出现了你的用户名，则代表成功</p>
+<h2 id="写文章及发布文章"><a href="#写文章及发布文章" class="headerlink" title="写文章及发布文章"></a>写文章及发布文章</h2><p>先更改一下<code>blog</code>目录中<code>_config.yml</code>文件最后一行的配置</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">deploy:
+  type: <span class="token function">git</span>
+  repository: https://github.com/yourname/yourname.github.io      <span class="token comment">#你的仓库地址</span>
+  branch: main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输入以下命令安装扩展</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>新建文章</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new <span class="token string">"title"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>生成的文章为<code>.md</code>文件，存储在<code>blog/source/_posts</code>中，可按照<code>markdown</code>格式编辑。<br>编辑完文章后，输入<code>hexo g</code>生成静态网页，输入<code>hexo s</code>可在本地预览(非必需)，输入<code>hexo d</code>将本地文件上传至github。之后只需要在网址输入<code>yourname.github.io</code>即可查看你的博客了(可能会有一点延迟)。</p>
+<h2 id="主题美化"><a href="#主题美化" class="headerlink" title="主题美化"></a>主题美化</h2><p>完成以上的步骤后，博客基本的功能已经实现了，剩下可以通过修改主题对其进行美化。本博客使用的主题是<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/tree/develop">hexo-theme-matery</a>，按照作者的说明逐步配置即可。</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>不得不说，搭建自己的博客确实是一件非常有意思的事情。由于本人是第一次使用macOS系统，搭建的过程也加深了我对系统的一些了解，总的来说收获颇多。</p>
+<p>最后，<strong>完结撒花！</strong></p>
 
                 
             </div>
@@ -333,7 +383,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://miyakori.github.io/2023/07/30/codepage/">https://miyakori.github.io/2023/07/30/codepage/</a>
+                    <a href="https://miyakori.github.io/2023/07/30/shi-yong-github-hexo-da-jian-bo-ke/">https://miyakori.github.io/2023/07/30/shi-yong-github-hexo-da-jian-bo-ke/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -371,8 +421,16 @@ int main()
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/code-news/">
-                                    <span class="chip bg-color">code,news</span>
+                                <a href="/tags/github/">
+                                    <span class="chip bg-color">github</span>
+                                </a>
+                            
+                                <a href="/tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                                    <span class="chip bg-color">博客</span>
                                 </a>
                             
                         </div>
@@ -423,13 +481,13 @@ int main()
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2023/07/30/codepage/">
+                <a href="/2023/07/30/shi-yong-github-hexo-da-jian-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="codepage">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="使用github+hexo搭建博客">
                         
-                        <span class="card-title">codepage</span>
+                        <span class="card-title">使用github+hexo搭建博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -444,8 +502,12 @@ int main()
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Miyakori
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -454,8 +516,16 @@ int main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/code-news/">
-                        <span class="chip bg-color">code,news</span>
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
                     </a>
                     
                 </div>
@@ -466,16 +536,16 @@ int main()
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2023/07/29/22222/">
+                <a href="/2023/07/30/shi-yong-github-hexo-da-jian-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="22222">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="使用github+hexo搭建博客">
                         
-                        <span class="card-title">22222</span>
+                        <span class="card-title">使用github+hexo搭建博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -486,15 +556,36 @@ int main()
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-30
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Miyakori
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -621,60 +712,6 @@ int main()
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="/libs/aplayer/Meting.min.js"></script>
-
-    
 
     <div class="container row center-align"
          style="margin-bottom: 0px !important;">
@@ -720,6 +757,10 @@ int main()
     </a>
 
 
+
+    <a href="mailto:lefantasque224@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
 
 
 
