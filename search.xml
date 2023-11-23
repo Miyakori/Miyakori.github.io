@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>c++队列及栈的用法</title>
+      <link href="/2023/11/23/c-dui-lie-ji-zhan-de-yong-fa/"/>
+      <url>/2023/11/23/c-dui-lie-ji-zhan-de-yong-fa/</url>
+      
+        <content type="html"><![CDATA[<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><h3 id="常规队列"><a href="#常规队列" class="headerlink" title="常规队列"></a>常规队列</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">queue&lt;int&gt; q;q.push(1);q.front();q.back();q.size();q.empty();q.pop();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="优先级队列"><a href="#优先级队列" class="headerlink" title="优先级队列"></a>优先级队列</h3><p>底层为大小堆实现，默认使用大顶堆，即队首元素最大。</p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">priority_queue&lt;int,vector&lt;int&gt;,less&lt;int&gt;&gt; q1; &#x2F;&#x2F;大顶堆priority_queue&lt;int,vector&lt;int&gt;,greater&lt;int&gt;&gt; q2； &#x2F;&#x2F;小顶堆q.empty();q.pop();q.push();q.size();q.top();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>自定义结构体重载</p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">struct test&#123;  int val;  test(int v)&#123;this-&gt;val&#x3D;v;&#125;&#125;struct cmp&#123;  bool operator () (const test t1,const test t2)const&#123;    return t1.val&lt;t2.val;  &#125;&#125;priority_queue&lt;test,vector&lt;test&gt;,cmp&gt; q;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">struct test&#123;  int val;  test(int v)&#123;this-&gt;val&#x3D;v;&#125;  bool operator &gt; (const test t)const&#123;    return val&gt;t.val;  &#125;  bool operator &lt; (const test t)const&#123;    return val&lt;t.val;  &#125;&#125;priority_queue&lt;test,vector&lt;test&gt;,less&lt;test&gt;&gt; q;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">stack&lt;int&gt; s;s.push();s.pop();s.size();s.empty();s.top();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用github+hexo搭建博客</title>
       <link href="/2023/07/30/shi-yong-github-hexo-da-jian-bo-ke/"/>
       <url>/2023/07/30/shi-yong-github-hexo-da-jian-bo-ke/</url>
